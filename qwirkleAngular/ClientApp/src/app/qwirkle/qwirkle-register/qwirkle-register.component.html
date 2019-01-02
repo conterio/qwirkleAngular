@@ -1,0 +1,15 @@
+<div ng-controller="">
+
+
+  <form (submit)="registerPlayer(name)">
+    <div class="form-group">
+      <label>Name: </label><br />
+      <input type="text" name="name" [(ngModel)]="name" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-info">Add Player</button>
+  </form>
+
+
+</div>
+
+

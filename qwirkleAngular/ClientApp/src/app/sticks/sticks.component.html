@@ -1,0 +1,33 @@
+<div ng-controller="">
+  
+  <h1>Sticks Game</h1>
+  <!--row 1-->
+  <div class="row" style="height:400px">
+    <!--left side-->
+    <div class="col-md-8">
+      <div>
+        <h4>Sticks Remaining: {{sticks}}</h4>
+        <span *ngFor="let number of getStickCount()">
+          <img height="50px" src="https://vignette.wikia.nocookie.net/pawnstarsthegame/images/e/e5/1980_US_Olympic_Hockey_Stick.png/revision/latest?cb=20160517210437" />
+        </span>
+      </div>
+    </div>
+      <!--right side-->
+    <div class="col-md-4 output">
+      <div *ngFor="let message of logs">
+        {{message}}
+      </div>
+    </div>    
+  </div>
+
+  <!--row 2-->
+  <div class="row">
+    <div>
+      <button style="margin-right:20px" class="btn btn-primary" (click)="takeOne()">Take One</button>
+      <button style="margin-right:20px" class="btn btn-primary" (click)="takeTwo()">Take Two</button>
+      <button class="btn btn-primary" (click)="resetGame()">Restart</button>
+    </div>
+  </div>
+</div>
+
+
