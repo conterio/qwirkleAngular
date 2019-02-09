@@ -14,6 +14,8 @@ import { QwirkleComponent } from './qwirkle/Qwirkle.component';
 import { QwirkleMenuComponent } from './qwirkle/qwirkle-menu/qwirkle-menu.component';
 import { QwirkleRegisterComponent } from './qwirkle/qwirkle-register/qwirkle-register.component';
 import { HubDataService } from './services/HubDataService';
+import { QwirkleLobbiesComponent } from './qwirkle/lobbies/qwirkle-lobbies.component';
+import { QwirklePlayersComponent } from './qwirkle/players/qwirkle-players.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { HubDataService } from './services/HubDataService';
     SticksComponent,
     QwirkleComponent,
     QwirkleMenuComponent,
-    QwirkleRegisterComponent    
+    QwirkleRegisterComponent,
+    QwirkleLobbiesComponent,
+    QwirklePlayersComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,7 +40,9 @@ import { HubDataService } from './services/HubDataService';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'sticks', component: SticksComponent },
-      { path: 'qwirkle', component: QwirkleComponent }
+      { path: 'qwirkle', component: QwirkleComponent },
+      { path: 'lobbies', component: QwirkleLobbiesComponent },
+      { path: 'players', component: QwirklePlayersComponent}
     ])
   ],
   providers: [HubDataService],

@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import * as signalR from '@aspnet/signalr';
 import { HubConnection, HubConnectionState } from '@aspnet/signalr';
-import { QwirkleMenuComponent } from './qwirkle-menu/qwirkle-menu.component';
 import { HubDataService } from '../services/HubDataService';
 
 @Component({
@@ -70,6 +69,18 @@ export class QwirkleComponent {
     this.connection.on("Register", status => {
       this.logs.push(`Player Added ${status}`);
     });
+
+    this.connection.on("AvailableGAmes", games => {
+      console.log("games:", games);
+    });
+
+    this.connection.on("GetAvailablePlayers", players => {
+      console.log("players: ", players);
+    })
+
+
+
+    
   }
 
 

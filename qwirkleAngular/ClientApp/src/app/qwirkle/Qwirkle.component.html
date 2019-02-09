@@ -1,26 +1,27 @@
 <div ng-controller="">
-  <h1>Qwirkle</h1>
+  
   <div class="row">
     <div class="col-md-8">
 
-      <h4>Connect to server</h4>
-      <p>Status: {{status}}</p>
-
-      <div *ngIf="status == 'Disconnected'" class="form-group">
-        <button (click)="connectToServer('http://localhost:60087/hub')" class="btn btn-info">Connect to Server</button>
+      <div *ngIf="status == 'Disconnected'" class="form-group">    
+        <h1>Qwirkle</h1>    
+        <h4>Connect to server</h4>
+        <button (click)="connectToServer('http://localhost:21891/hub')" class="btn btn-info">Connect to Server</button>
       </div>
+        <p>Status: {{status}}</p>
 
       <div *ngIf="status == 'Connected'">
         <app-qwirkle-menu-component [connection]="connection" [logs]="logs"></app-qwirkle-menu-component>
       </div>
-
     </div>
+    
+
+
     <div class="col-md-4">
       <div *ngFor="let log of logs">
         {{log}}
       </div>
     </div>
-
 
 
 

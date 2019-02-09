@@ -1,0 +1,26 @@
+<div ng-controller="">
+
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Connection Id</th>
+          <th scope="col">Is Human</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of players; let i = index">
+          <th scope="row">{{i}}</th>
+          <td>{{player.name}}</td>
+          <td>{{player.connectionId}}</td>
+          <td>{{player.isHumanPlayer}}</td>
+        </tr>        
+      </tbody>
+    </table>
+
+
+
+</div>
+
+

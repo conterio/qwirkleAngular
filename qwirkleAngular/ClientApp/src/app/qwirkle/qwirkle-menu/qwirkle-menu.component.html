@@ -1,9 +1,35 @@
 <div ng-controller="">
-  <h1>Qwirkle Menu</h1>
+  
 
+  <div >
+      
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" (click)="displayMe('register')">Register</a>
+      <a class="navbar-brand" (click)="displayMe('lobbies')">Lobbies</a>
+      <a class="navbar-brand" (click)="displayMe('players')">Players</a>
+    </nav>
+        
+  </div>
 
-  <h4>Register Player</h4>
-  <app-qwirkle-register-component [connection]="connection" [logs]="logs"></app-qwirkle-register-component>
+  
+    <div *ngIf="renderMe == 'register'">
+      <h4>Register</h4>
+      <app-qwirkle-register-component [connection]="connection" [logs]="logs"></app-qwirkle-register-component>
+    </div>
+
+    <div *ngIf="renderMe == 'lobbies'">
+        <h4>Lobbies</h4>
+        <app-qwirkle-lobbies-component [connection]="connection" [logs]="logs"></app-qwirkle-lobbies-component>
+    </div>
+
+    <div *ngIf="renderMe == 'players'">
+      <h4>Players</h4>
+      <app-qwirkle-players-component [connection]="connection" [logs]="logs"></app-qwirkle-players-component>
+    </div>
+
+    <div *ngIf="renderMe == 'default'">      
+    </div>
+  
 
 
 
