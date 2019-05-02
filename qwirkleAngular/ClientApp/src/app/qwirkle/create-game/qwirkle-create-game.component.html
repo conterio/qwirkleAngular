@@ -1,0 +1,49 @@
+<div ng-controller="">
+
+
+
+
+
+  <form (submit)="CreateGame(gameSettings)">
+
+    <div class="form-group">
+      <label>Name: </label><br />
+      <input type="text" name="Name" [(ngModel)]="gameSettings.Name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>Time for human to take turn: </label><br />
+      <input type="text" name="HumanTimeout" [(ngModel)]="gameSettings.HumanTimeout" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>Time for AI to take turn: </label><br />
+      <input type="text" name="AITimeout" [(ngModel)]="gameSettings.AITimeout" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>NumberOfTiles: </label><br />
+      <input type="text" name="NumberOfTiles" [(ngModel)]="gameSettings.NumberOfTiles" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>HandSize: </label><br />
+      <input type="text" name="HandSize" [(ngModel)]="gameSettings.HandSize" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>MaxPlayers: </label><br />
+      <input type="text" name="MaxPlayers" [(ngModel)]="gameSettings.MaxPlayers" class="form-control" />
+    </div>
+
+
+
+    <button type="submit" class="btn btn-info">Create Game</button>
+  </form>
+
+
+
+</div>
+
+
+

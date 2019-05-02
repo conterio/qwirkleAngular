@@ -9,7 +9,8 @@ export class HubDataService {
   logs: string[];
 
   constructor() {
-    this.ipaddress = "http://localhost:21891/hub";
+    //this.ipaddress = "http://localhost:21891/hub";
+    this.ipaddress = "http://localhost:52367/hub";
     this.status = HubConnectionState[0];
     this.logs = [];
     this.connection = undefined;

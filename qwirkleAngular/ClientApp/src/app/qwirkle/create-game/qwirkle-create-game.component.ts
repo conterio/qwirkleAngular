@@ -1,32 +1,38 @@
 import { Component, Input } from '@angular/core';
 import * as signalR from '@aspnet/signalr';
 import { HubConnection, HubConnectionState } from '@aspnet/signalr';
+import { GameSettings } from '../../Models/CreateGameModel';
 
 @Component({
-  selector: 'app-qwirkle-register-component',
-  templateUrl: './qwirkle-register.component.html'
+  selector: 'app-qwirkle-create-game-component',
+  templateUrl: './qwirkle-create-game.component.html'
 })
 
-export class QwirkleRegisterComponent {
+export class QwirkleCreateGameComponent {
 
   name: string;
   @Input() connection: HubConnection;
   @Input() logs: string[];
+  gameSettings: GameSettings;
+
 
   constructor() {
 
   }
+  ngOnInit(){
+    
+  }
 
-  registerPlayer(playerName) {
-    if (this.checkConnection()) {
+  public createGame(){
+    if(this.checkConnection()) {
       if (this.connection.state == HubConnectionState.Connected) {
-        this.connection.invoke("Register", [playerName, false])//TODO let the user choose this option
+        this.connection.invoke("CreateGame", this.gameSettings)
           .catch(err => {
             this.logs.push(err.toString())
           })
-          .then(success => {
-            this.logs.push("Player Registered.");
-          });
+          .then(success => {            
+            this.logs.push("Created Game successfully", success)
+          })
       }
     }
   }
