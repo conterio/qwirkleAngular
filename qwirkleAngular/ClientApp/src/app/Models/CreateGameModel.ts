@@ -1,4 +1,4 @@
-export interface GameSettings {
+export class GameSettings {
   Name: string;
   HumanTimeout: number;
   AITimeout: number;

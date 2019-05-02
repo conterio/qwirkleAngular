@@ -10,14 +10,13 @@ import { GameSettings } from '../../Models/CreateGameModel';
 
 export class QwirkleCreateGameComponent {
 
-  name: string;
   @Input() connection: HubConnection;
   @Input() logs: string[];
-  gameSettings: GameSettings;
+  public gameSettings: GameSettings;
 
 
   constructor() {
-
+    this.gameSettings = new GameSettings();
   }
   ngOnInit(){
     
@@ -26,11 +25,13 @@ export class QwirkleCreateGameComponent {
   public createGame(){
     if(this.checkConnection()) {
       if (this.connection.state == HubConnectionState.Connected) {
+        console.log("gameseetings",this.gameSettings);
+
         this.connection.invoke("CreateGame", this.gameSettings)
           .catch(err => {
             this.logs.push(err.toString())
           })
-          .then(success => {            
+          .then(success => {
             this.logs.push("Created Game successfully", success)
           })
       }

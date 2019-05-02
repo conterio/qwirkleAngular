@@ -20,7 +20,7 @@ export class QwirkleRegisterComponent {
   registerPlayer(playerName) {
     if (this.checkConnection()) {
       if (this.connection.state == HubConnectionState.Connected) {
-        this.connection.invoke("Register", [playerName, false])//TODO let the user choose this option
+        this.connection.invoke("Register", playerName, false)//TODO let the user choose this option
           .catch(err => {
             this.logs.push(err.toString())
           })

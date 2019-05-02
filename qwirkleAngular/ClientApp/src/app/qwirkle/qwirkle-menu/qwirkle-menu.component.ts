@@ -19,6 +19,12 @@ export class QwirkleMenuComponent {
 
   }
 
+  //connect automaticly
+  //register pops up
+  //main page - list of avaible game, select, join, & create game
+  //create lobby page - players, games settings, chat optional, start button (for host)
+  //once game starts - game screen -board, players
+
   public displayMe(val) {    
     this.renderMe = val;
   }

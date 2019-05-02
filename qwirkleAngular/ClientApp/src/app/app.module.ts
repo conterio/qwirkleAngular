@@ -16,6 +16,7 @@ import { QwirkleRegisterComponent } from './qwirkle/qwirkle-register/qwirkle-reg
 import { HubDataService } from './services/HubDataService';
 import { QwirkleLobbiesComponent } from './qwirkle/lobbies/qwirkle-lobbies.component';
 import { QwirklePlayersComponent } from './qwirkle/players/qwirkle-players.component';
+import { QwirkleCreateGameComponent } from './qwirkle/create-game/qwirkle-create-game.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { QwirklePlayersComponent } from './qwirkle/players/qwirkle-players.compo
     QwirkleMenuComponent,
     QwirkleRegisterComponent,
     QwirkleLobbiesComponent,
-    QwirklePlayersComponent
+    QwirklePlayersComponent,
+    QwirkleCreateGameComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -42,7 +44,8 @@ import { QwirklePlayersComponent } from './qwirkle/players/qwirkle-players.compo
       { path: 'sticks', component: SticksComponent },
       { path: 'qwirkle', component: QwirkleComponent },
       { path: 'lobbies', component: QwirkleLobbiesComponent },
-      { path: 'players', component: QwirklePlayersComponent}
+      { path: 'players', component: QwirklePlayersComponent },
+      { path: 'create-game', component: QwirkleCreateGameComponent },
     ])
   ],
   providers: [HubDataService],
