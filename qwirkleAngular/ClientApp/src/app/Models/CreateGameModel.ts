@@ -1,9 +1,9 @@
 export class GameSettings {
-  Name: string;
-  HumanTimeout: number;
-  AITimeout: number;
-  NumberOfTiles: number;
-  HandSize: number;
-  MaxPlayers: number;
+  name: string;
+  humanTimeout: number;
+  aiTimeout: number;
+  numberOfTiles: number;
+  handSize: number;
+  maxPlayers: number;
 
 }

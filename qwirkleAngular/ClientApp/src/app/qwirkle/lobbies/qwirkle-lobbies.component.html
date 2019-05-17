@@ -1,5 +1,34 @@
 <div ng-controller="">
 
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Game Id</th>
+            <th scope="col">Available Spots</th>
+            <th scope="col">AITimeout</th>
+            <th scope="col">HandSize</th>
+            <th scope="col">HumanTimeout</th>
+            <th scope="col">MaxPlayers</th>
+            <th scope="col">Game Settings Name</th>
+            <th scope="col">NumberOfTiles</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let lobby of lobbies; let i = index">
+            <th scope="row">{{i}}</th>
+            <td>{{lobby.gameName}}</td>
+            <td>{{lobby.gameid}}</td>
+            <td>{{lobby.avaiableSpots}}</td>
+            <td>{{lobby.gameSettings.aiTimeout}}</td>
+            <td>{{lobby.gameSettings.handSize}}</td>
+            <td>{{lobby.gameSettings.humanTimeout}}</td>
+            <td>{{lobby.gameSettings.maxPlayers}}</td>
+            <td>{{lobby.gameSettings.name}}</td>
+            <td>{{lobby.gameSettings.numberOfTiles}}</td>
+          </tr>
+        </tbody>
+      </table>
+
 </div>
-
-
